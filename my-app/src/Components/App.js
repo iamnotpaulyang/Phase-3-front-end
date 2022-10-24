@@ -1,26 +1,27 @@
-
 import '../App.css';
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import NavBar from "./NavBar.js"
 import Home from "./Home.js"
-import SoulCards from "./SoulCards.js"
+import SoulContainer from "./SoulContainer.js"
 import NewSoulForm from "./NewSoulForm.js"
 
 function App() {
+  const [souls, setSouls] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292")
+    fetch("http://localhost:9292/souls")
     .then((r) => r.json())
-    .then((data) => console.log(data));
+    .then((data) => setSouls(data));
   },[])
   
   return (
     <div className="App">
+      <h2>The Underworld</h2>
       <NavBar className = "NavBar"/> 
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/souls" element={<SoulCards />} />
+        <Route path="/souls" element={<SoulContainer souls={souls}/>} />
         <Route path="/form" element={<NewSoulForm />} />
       </Routes>   
     </div>
