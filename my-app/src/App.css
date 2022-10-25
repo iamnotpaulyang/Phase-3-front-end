@@ -17,20 +17,29 @@
   color: #61dafb;
 }
 
-
-
+.shade{
+  height: 66%;
+  width: 66%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0%;
+}
 
 @media (min-width: 768px) {
   .cards {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     justify-content: space-between;
     column-count: 4;
     gap: 30px;
+    color:rgba(255, 249, 245, 0.956)
   }
 
   .card {
-    box-shadow:  rgba(67, 66, 65, 0.7) 5px 5px 5px;
+    box-shadow:  rgba(21, 21, 21, 0.806) 5px 5px 5px;
+    background-color: #3d4041;
     padding: 10px;
     display: flex;
     flex-direction: column;

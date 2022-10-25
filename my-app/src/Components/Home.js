@@ -27,10 +27,12 @@ function Home({demons, addNewDemon}) {
 }
   
     return (
-  <div className="home"> 
-    {demons.map((demon) => {
-    return <DemonCards demon={demon} key={demon.id} />
-    })}
+    <div className="home">
+    <div className="cards"> 
+        {demons.map((demon) => {
+        return <DemonCards demon={demon} key={demon.id} />
+        })}
+    </div>
     <div className="new-demon-form">
       <h2>New Demon</h2>
       <form onSubmit={handleSubmit}>

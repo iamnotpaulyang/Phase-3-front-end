@@ -33,13 +33,15 @@ function App() {
     setSouls(remainingSouls)
   }
 
+
+
   return (
     <div className="App">
       <h2>The Underworld</h2>
       <NavBar className = "NavBar"/> 
       <Routes>
         <Route exact path="/" element={<Home demons= {demons} addNewDemon = {addNewDemon} />} />
-        <Route path="/souls" element={<SoulContainer souls={souls} onDeleteSoul={handleDeleteSoul} />} />
+        <Route path="/souls" element={<SoulContainer souls={souls} onDeleteSoul={handleDeleteSoul} setSouls={setSouls} />} />
         <Route path="/form" element={<NewSoulForm />} />
       </Routes>   
     </div>
