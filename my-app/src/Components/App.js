@@ -27,7 +27,7 @@ function App() {
       <h2>The Underworld</h2>
       <NavBar className = "NavBar"/> 
       <Routes>
-        <Route exact path="/" element={<Home demons={demons} />} />
+        <Route exact path="/" element={demons.map((demon) => {return <Home key={demon.id} demon= {demon} />})} />
         <Route path="/souls" element={<SoulContainer souls={souls} />} />
         <Route path="/form" element={<NewSoulForm />} />
       </Routes>   
