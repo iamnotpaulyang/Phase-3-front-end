@@ -1,7 +1,7 @@
 import React, {useState} from "react";
+import DemonCards from "./DemonCards";
 
-
-function Home({demon, addNewDemon}) {
+function Home({demons, addNewDemon}) {
   
   const [name, setName] = useState ("")
   const [image, setImage] = useState("")
@@ -27,14 +27,10 @@ function Home({demon, addNewDemon}) {
 }
   
     return (
-  <div className="home">
-    HomePage!
-   <li className="card">
-    {/* <img src={image}/> */}
-    <h4>{demon.name}</h4>
-    <h4> {demon.number_of_souls} </h4>
-    <h4>{demon.classification}</h4>
-    </li> 
+  <div className="home"> 
+    {demons.map((demon) => {
+    return <DemonCards demon={demon} key={demon.id} />
+    })}
     <div className="new-demon-form">
       <h2>New Demon</h2>
       <form onSubmit={handleSubmit}>
@@ -44,7 +40,6 @@ function Home({demon, addNewDemon}) {
         <button type="submit">Add Demon</button>
       </form>
     </div>
-  );
   </div>
   ) 
 }
