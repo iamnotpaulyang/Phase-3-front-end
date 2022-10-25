@@ -8,11 +8,18 @@ import NewSoulForm from "./NewSoulForm.js"
 
 function App() {
   const [souls, setSouls] = useState([])
+  const [demons, setDemons] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9292/souls")
     .then((r) => r.json())
     .then((data) => setSouls(data));
+  },[])
+
+  useEffect(() => {
+    fetch("http://localhost:9292/demons")
+    .then((r) => r.json())
+    .then((data) => setDemons(data));
   },[])
   
   return (
@@ -20,8 +27,8 @@ function App() {
       <h2>The Underworld</h2>
       <NavBar className = "NavBar"/> 
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/souls" element={<SoulContainer souls={souls}/>} />
+        <Route exact path="/" element={<Home demons={demons} />} />
+        <Route path="/souls" element={<SoulContainer souls={souls} />} />
         <Route path="/form" element={<NewSoulForm />} />
       </Routes>   
     </div>
