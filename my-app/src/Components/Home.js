@@ -1,7 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Home({demon}) {
-  return (
+
+function Home({demon, addNewDemon}) {
+  
+  const [name, setName] = useState ("")
+  const [image, setImage] = useState("")
+  const [classification, setClassification] = useState("")
+  
+  const newDemonObj={
+  
+    name: name,
+    image: image,
+    classification: classification,}
+  
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    
+    fetch("http://localhost:9292/demons", {
+      method: "POST",
+      headers: {"Content-Type" : "application/json"},
+      body: JSON.stringify(newDemonObj)
+    })
+    .then(r => r.json())
+    .then (newDemonObj => addNewDemon(newDemonObj))
+}
+  
+    return (
   <div className="home">
     HomePage!
    <li className="card">
@@ -10,6 +35,16 @@ function Home({demon}) {
     <h4> {demon.number_of_souls} </h4>
     <h4>{demon.classification}</h4>
     </li> 
+    <div className="new-demon-form">
+      <h2>New Demon</h2>
+      <form onSubmit={handleSubmit}>
+        <input value={name} onChange={(e) => setName(e.target.value)} name="name" placeholder="Demon name" />
+        {/* <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="Image URL" /> */}
+        <input value={classification} onChange={(e) => setClassification(e.target.value)} classification="classfication" placeholder="Demon classification" />
+        <button type="submit">Add Demon</button>
+      </form>
+    </div>
+  );
   </div>
   ) 
 }
