@@ -1,11 +1,11 @@
 import React from "react";
 import SoulCards from "./SoulCards";
 
-function SoulContainer({souls}){
+function SoulContainer({souls, onDeleteSoul}){
     return (
         <div className="cards">
                 {souls.map((soul) => {
-                    return<SoulCards key={soul.id} soul={soul} />
+                    return<SoulCards key={soul.id} soul={soul} onDeleteSoul={onDeleteSoul} />
                 })}
         </div>
     );

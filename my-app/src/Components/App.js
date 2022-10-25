@@ -26,13 +26,20 @@ function App() {
     setDemons ([...demons, newDemonObj])
   }
 
+  function handleDeleteSoul(deleteSoul){
+    const remainingSouls = souls.filter((soul)=> {
+      return soul.id !== deleteSoul.id
+    })
+    setSouls(remainingSouls)
+  }
+
   return (
     <div className="App">
       <h2>The Underworld</h2>
       <NavBar className = "NavBar"/> 
       <Routes>
         <Route exact path="/" element={<Home demons= {demons} addNewDemon = {addNewDemon} />} />
-        <Route path="/souls" element={<SoulContainer souls={souls} />} />
+        <Route path="/souls" element={<SoulContainer souls={souls} onDeleteSoul={handleDeleteSoul} />} />
         <Route path="/form" element={<NewSoulForm />} />
       </Routes>   
     </div>
