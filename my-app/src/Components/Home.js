@@ -8,7 +8,7 @@ function Home({demon}) {
     {/* <img src={image}/> */}
     <h4>{demon.name}</h4>
     <h4> {demon.number_of_souls} </h4>
-    <h4>{demon.classificaton}</h4>
+    <h4>{demon.classification}</h4>
     </li> 
   </div>
   ) 
