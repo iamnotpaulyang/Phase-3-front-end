@@ -31,11 +31,11 @@ function SoulCards({soul, onDeleteSoul, onUpdateLocation}){
 
     return (
         <li className="card">
-           <h2>{soul.name}</h2>
-           <img className="shade" src="https://vignette2.wikia.nocookie.net/darksouls/images/c/ca/Soul_of_Aldrich.png/revision/latest?cb=20160615102454" alt="Shade" />
-           <h4>{soul.location}
+           <h2 className="card_text">{soul.name}</h2>
+           <img className="shade" src="https://cdn.frankerfacez.com/emoticon/533554/4" alt="Shade" />
+           <h4 className="card_text">{soul.location}
             <br/>
-            <button className="btn" onClick={handleClick}>
+            <button className="btn-primary" onClick={handleClick}>
                 Update
             </button>
             {isShown && (
@@ -51,9 +51,9 @@ function SoulCards({soul, onDeleteSoul, onUpdateLocation}){
             </form>
             )}
             </h4> 
-            <h4>Years dead: {soul.years_dead} years</h4>
-            <h4>Sentenced to rot: {soul.sentence} years</h4>
-            <button className="btn-primary" onClick={handleDelete} >Click to help this Shade Escape!</button>
+            <h4 className="card_text">Years dead: {soul.years_dead} years</h4>
+            <h4 className="card_text">Sentenced to rot: {soul.sentence} years</h4>
+            <button className="btn-primary" onClick={handleDelete} >Help this Shade Escape!</button>
         </li>
     );
 }

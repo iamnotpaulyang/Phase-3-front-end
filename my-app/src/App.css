@@ -1,5 +1,19 @@
+:root{
+  --green: rgba(2, 77, 25, 0.684);
+  --light-green: rgba(18, 133, 50, 0.714);
+  --light-blue: rgba(102, 197, 207, 0.7);
+  --burnt-orange: rgba(158, 37, 0, 0.812);
+  --red-orange: rgba(228, 80, 51, 0.467);
+  --gold: rgb(161, 103, 16);
+  --purple-blue: rgba(23, 35, 126, 0.75);
+  --purple: rgba(42, 19, 107, 0.701);
+  --mauve: rgb(120, 75, 132);
+  --hibiscus: rgb(180, 55, 87);
+}
+
 .App {
   text-align: center;
+  background-color: var(--green);
 }
 
 .App-header {
@@ -10,45 +24,82 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+  font-family: 'Greek font';
+  src: url('CaesarDressing.woff') format('woff2');
 }
 
 .demonImg,
 .shade{
-  height: 66%;
-  width: 66%;
+  height: 35%;
+  width: 35%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 0%;
+  transition: transform .2s;
 }
 .demonImg{
   height: 100%;
   width: 100%;
+  border-radius: 10px;
+}
+.shade:hover{
+  transform: scale(1.2);
 }
 
 @media (min-width: 768px) {
   .cards {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     column-count: 4;
-    gap: 30px;
-    color:rgba(255, 249, 245, 0.956)
+    gap: 20px;
+    color: whitesmoke;
+    font-family: "ubuntu";
+    padding: 80px;
+    font-size: 14pt;
+    letter-spacing: 1.5px;
   }
   .card {
-    box-shadow:  rgba(21, 21, 21, 0.806) 5px 5px 5px;
-    background-color: #3d4041;
+    box-shadow: var(--green) 5px 5px 5px;
+    background: var(--purple);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--green);
     padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     }
-
+    #demon_card {
+      font-size: 18pt;
+      box-shadow: var(--green) 5px 5px 5px;
+      background: var(--burnt-orange);
+      border-radius: 10px;
+      border: 1px solid var(--green);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex: 1;
+      gap: 20px;
+      height: 60%;
+      width: 60%;
+      flex: 1 
+    }
+    .card_text{
+      margin: 4%;
+      padding: 0%;
+    }
+ 
   }
 @media (min-width: 1024px) {
   .card {
@@ -63,70 +114,72 @@
 }
 
 #navDiv{
-  /* height: 90%; */
-  /* width: 90%; */
   padding: 4%;
-  background-image: url("/Users/paulyang/Development/code/Projects/Phase-3-front-end/my-app/src/1113643.png");
+  background-image: url("https://images4.alphacoders.com/111/1113643.png");
   color: white;
-  /* background-repeat: no-repeat; */
   background-position: center;
+  font-family: 'Greek font';
+  letter-spacing: 3pt;
+  font-size: 160%;
+}
+.nav {
+  font-size:18px;
+  font-family: "ubuntu";
+  width:140px;
+  height:50px;
+  border-width:2px;
+  color:#fff;
+  border-color:#141515;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  box-shadow:inset 0px 0px 15px 0px rgba(2, 26, 9, 0.909);
+  text-shadow:inset 0px 1px 0px #263666;
+  background-color:rgba(4, 54, 18, 0.8);
+  padding: 10px;
 }
 
-/* 
-.btn-primary {
-  align-items: center;
-  background-color: #269e6cfe;
-  border: 2px solid #111;
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #111;
-  cursor: pointer;
+.new-demon-form {
+ padding-bottom: 80px;
+}
+.new-demon-form,
+.new-soul-form {
+  font-size:18px;
+  font-family: "Greek font";
+  padding: 80px;
+  margin: auto;
+  width: 180px;
   display: flex;
-  font-family: Inter,sans-serif;
+  flex-direction: column;
+  align-items: center;
+  /* text-align: left; */
+}
+.form-input,
+.dropdown{
   font-size: 16px;
-  height: 48px;
-  justify-content: center;
-  line-height: 24px;
-  max-width: 100%;
-  padding: 0 25px;
-  position: center;
+  font-family: "ubuntu";
   text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  width: 180px;
+}
+.dropdown{
+  padding: 2px;
 }
 
-.btn-primary:after {
-  background-color: #111;
-  border-radius: 8px;
-  content: "";
+
+.btn-primary {
+  background-color: var(--green);
+  border: 1px solid var(--purple);
+  border-radius: .5rem;
+  color: white;
+  padding: 0.4rem;
+  font-family: "ubuntu";
+  font-size: 12pt;
+  box-shadow: var(--purple) 5px 5px 5px;
+}
+
+.btn--block {
   display: block;
-  height: 48px;
-  left: 0;
   width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
-  z-index: -1;
 }
-
-.btn-primary:hover:after {
-  transform: translate(0, 0);
-}
-
-.btn-primary:active {
-  background-color: #ffdeda;
-  outline: 0;
-}
-
-.btn-primary:hover {
-  outline: 0;
-}
-
-@media (min-width: 768px) {
-  .btn-primary {
-    padding: 0 40px;
-  }
-} */
+ 

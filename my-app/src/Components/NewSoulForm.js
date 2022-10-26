@@ -36,10 +36,10 @@ function NewSoulForm({demons, addNewSouls}){
         <div>
             <form className="new-soul-form" onSubmit={handleSubmit}>
                 <label htmlFor="name">Soul's Name: </label>
-                <input type='text' name='name' value={name} onChange={(e)=>{setName(e.target.value)}}/>
+                <input className = "form-input" type='text' name='name' value={name} onChange={(e)=>{setName(e.target.value)}}/>
                 <br />
                 <label htmlFor="location">Location: </label>
-                    <select id="location" name="location" onChange={(e) => setLocation(e.target.value)}>
+                    <select className = "dropdown" id="location" name="location" onChange={(e) => setLocation(e.target.value)}>
                         <option value=""> Select...</option>
                         <option value="Tartarus"> Tartarus</option>
                         <option value="Asphodel"> Asphodel</option>
@@ -48,7 +48,7 @@ function NewSoulForm({demons, addNewSouls}){
                     </select>
                 <br />
                 <label htmlFor='demonId'>Guard Demon: </label>
-                 <select id="demonId" name="demonId" onChange={(e)=>{setDemonId(e.target.value)}}>
+                 <select className = "dropdown" id="demonId" name="demonId" onChange={(e)=>{setDemonId(e.target.value)}}>
                         <option value=""> Select...</option>
                         {demons.map((demon) => {
                             return <option key={demon.id} value={demon.id}>{demon.name}</option>
@@ -56,7 +56,7 @@ function NewSoulForm({demons, addNewSouls}){
                  </select>
                 <br />
                 <label htmlFor='sentence'>Sentence: </label>
-                <input type='integer' name='sentence' value={sentence} onChange={(e)=>{setSentence(e.target.value)}}/>
+                <input className = "form-input" type='integer' name='sentence' value={sentence} onChange={(e)=>{setSentence(e.target.value)}}/>
                 <br />
                 <button className="btn-primary" type="submit">Add New Soul</button>
             </form>

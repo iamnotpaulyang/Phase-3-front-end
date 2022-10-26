@@ -4,13 +4,12 @@ import DemonCards from "./DemonCards";
 function Home({demons, addNewDemon}) {
   
   const [name, setName] = useState ("")
-  const [image, setImage] = useState("")
+  const [demonImg, setDemonImg] = useState("")
   const [classification, setClassification] = useState("")
   
   const newDemonObj={
-  
     name: name,
-    image: image,
+    demon_img: demonImg,
     classification: classification
   }
   
@@ -29,7 +28,11 @@ function Home({demons, addNewDemon}) {
   
     return (
     <div className="home">
-    <div className="cards"> 
+      <div className="about">
+        <h2>About The Underworld</h2>
+        <h4>Lore about Hades goes here...</h4>
+      </div>    
+      <div className="cards"> 
         {demons.map((demon) => {
         return <DemonCards demon={demon} key={demon.id} />
         })}
@@ -37,11 +40,11 @@ function Home({demons, addNewDemon}) {
     <div className="new-demon-form">
       <h2>New Demon</h2>
       <form onSubmit={handleSubmit}>
-        <input value={name} onChange={(e) => setName(e.target.value)} name="name" placeholder="Demon name" />
+        <input className = "form-input" value={name} onChange={(e) => setName(e.target.value)} name="name" type="text" placeholder="Demon name" />
         <br />
-        <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="Image URL" />
+        <input className = "form-input" value={demonImg} onChange={(e) => setDemonImg(e.target.value)} type="text" name="demon_img" placeholder="Image URL" />
         <br />
-        <input value={classification} onChange={(e) => setClassification(e.target.value)} classification="classfication" placeholder="Demon classification" />
+        <input className = "form-input" value={classification} onChange={(e) => setClassification(e.target.value)} type="text" classification="classfication" placeholder="Demon classification" />
         <br />
         <button className="btn-primary" type="submit">Add Demon</button>
       </form>
