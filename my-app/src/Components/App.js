@@ -20,7 +20,7 @@ function App() {
     fetch("http://localhost:9292/demons")
     .then((r) => r.json())
     .then((data) => setDemons(data));
-  },[])
+  },[souls])
   
   function addNewDemon(newDemonObj){
     setDemons ([...demons, newDemonObj])

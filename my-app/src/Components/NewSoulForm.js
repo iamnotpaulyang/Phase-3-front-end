@@ -1,49 +1,36 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-//need onSubmit with form and need e.preventDefault()
+
 function NewSoulForm({demons, addNewSouls}){
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
-    const [numberOfSouls, setNumberOfSouls] = useState("");
     const [sentence, setSentence] = useState(0);
+    const [demonId, setDemonId] = useState(null)
 
     const newSoulObj={
             name: name,
             location: location,
-            numberOfSouls: numberOfSouls,
             sentence: parseInt(sentence),
-            demon_id: 1
+            demon_id: parseInt(demonId)
           }
 
     let navigate = useNavigate();
     
     function handleSubmit (e){
         e.preventDefault();
-        navigate("/souls");
-
-        fetch("http://localhost:9292/souls", {
-            method: "POST",
-            headers: {"Content-Type" : "application/json"},
-            body: JSON.stringify(newSoulObj)
-          })
-          .then(r => r.json())
-          .then (newSoulObj => {
-            addNewSouls(newSoulObj)
-            // handleDemon(newSoulObj)
-        })
+        if (demonId === null){
+            window.alert("Select Guard Demon")
+        } else {
+            navigate("/souls");
+            fetch("http://localhost:9292/souls", {
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify(newSoulObj)
+            })
+            .then(r => r.json())
+            .then (newSoulObj => {addNewSouls(newSoulObj)})
+        }
     }
-
-    // function handleDemon(){
-    //     demons.filter((demon) => {
-    //         console.log(demon.name)
-    //         if (numberOfSouls === demon.name) {
-    //             return demon.id
-    //         }
-    //         else {
-    //             return alert("Demon Not Found")
-    //         }   
-    //     })
-    // }
 
     return (
         <div>
@@ -60,11 +47,11 @@ function NewSoulForm({demons, addNewSouls}){
                         <option value="Temple of Styx"> Temple of Styx</option>
                     </select>
                 <br />
-                <label htmlFor='numberOfSouls'>Guard Demon: </label>
-                 <select id="numberOfSouls" name="numberOfSouls" onChange={(e)=>{setNumberOfSouls(e.target.value)}}>
+                <label htmlFor='demonId'>Guard Demon: </label>
+                 <select id="demonId" name="demonId" onChange={(e)=>{setDemonId(e.target.value)}}>
                         <option value=""> Select...</option>
                         {demons.map((demon) => {
-                            return <option value={demon.name}>{demon.name}</option>
+                            return <option key={demon.id} value={demon.id}>{demon.name}</option>
                             })}
                  </select>
                 <br />
