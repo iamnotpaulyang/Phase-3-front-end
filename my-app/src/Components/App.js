@@ -26,9 +26,10 @@ function App() {
     setDemons ([...demons, newDemonObj])
   }
   
-  function addNewSoul(newSoulObj){
+  function addNewSouls(newSoulObj){
     setSouls ([...souls, newSoulObj])
   }
+
   function handleDeleteSoul(deleteSoul){
     const remainingSouls = souls.filter((soul)=> {
       return soul.id !== deleteSoul.id
@@ -36,19 +37,13 @@ function App() {
     setSouls(remainingSouls)
   }
 
-
-  //need a function that takes in a newSouls parameter then resets the soul state with the newSouls
-
-
-
   return (
     <div className="App">
-      <h2>The Underworld</h2>
       <NavBar className = "NavBar"/> 
       <Routes>
         <Route exact path="/" element={<Home demons= {demons} addNewDemon = {addNewDemon} />} />
         <Route path="/souls" element={<SoulContainer souls={souls} onDeleteSoul={handleDeleteSoul} setSouls={setSouls} />} />
-        <Route path="/form" element={<NewSoulForm addNewSoul = {addNewSoul} />} />
+        <Route path="/form" element={<NewSoulForm addNewSouls = {addNewSouls} demons={demons} />} />
       </Routes>   
     </div>
   );

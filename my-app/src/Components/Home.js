@@ -38,9 +38,12 @@ function Home({demons, addNewDemon}) {
       <h2>New Demon</h2>
       <form onSubmit={handleSubmit}>
         <input value={name} onChange={(e) => setName(e.target.value)} name="name" placeholder="Demon name" />
-        {/* <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="Image URL" /> */}
+        <br />
+        <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="Image URL" />
+        <br />
         <input value={classification} onChange={(e) => setClassification(e.target.value)} classification="classfication" placeholder="Demon classification" />
-        <button type="submit">Add Demon</button>
+        <br />
+        <button className="btn-primary" type="submit">Add Demon</button>
       </form>
     </div>
   </div>
