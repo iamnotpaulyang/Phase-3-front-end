@@ -11,9 +11,10 @@ function Home({demons, addNewDemon}) {
   
     name: name,
     image: image,
-    classification: classification,}
+    classification: classification
+  }
   
-    const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     
@@ -24,7 +25,7 @@ function Home({demons, addNewDemon}) {
     })
     .then(r => r.json())
     .then (newDemonObj => addNewDemon(newDemonObj))
-}
+  }
   
     return (
     <div className="home">
