@@ -30,6 +30,31 @@
   font-family: 'Greek font';
   src: url('CaesarDressing.woff') format('woff2');
 }
+.about-app{
+  padding: 0;
+  margin: 8px;
+}
+.about{
+  color: whitesmoke;
+  font-family: "Times New Roman";
+  font-size: 13pt;
+  padding-inline: 180px;
+  padding-top: 16px;
+}
+.about-box{
+  border-width:2px;
+  color:#fff;
+  border-color:#141515;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  box-shadow:inset 0px 0px 15px 0px rgba(2, 26, 9, 0.902);
+  text-shadow:inset 0px 1px 0px #263666;
+  background-color:rgba(4, 54, 18, 0.5);
+  padding: 45px;
+  letter-spacing: 1pt;
+}
 
 .demonImg,
 .shade{
@@ -62,6 +87,9 @@
     padding: 80px;
     font-size: 14pt;
     letter-spacing: 1.5px;
+  }
+  #demon-cards{
+    padding-block: 30px;
   }
   .card {
     box-shadow: var(--green) 5px 5px 5px;
@@ -152,12 +180,10 @@
   font-size:18px;
   font-family: "Greek font";
   padding: 40px;
-  /* margin: auto; */
   width: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* text-align: left; */
 }
 
 .new-soul-form{
@@ -175,7 +201,11 @@ backdrop-filter: blur(7.9px);
   background-position: inherit;
   flex-grow: inherit;
   background-repeat: no-repeat;
-  padding: 16%;
+  padding: 20%;
+}
+
+.demon-form{
+  padding: 10px;
 }
 
 .form-input,
