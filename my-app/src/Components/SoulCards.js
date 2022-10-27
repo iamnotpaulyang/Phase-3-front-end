@@ -36,7 +36,7 @@ function SoulCards({soul, onDeleteSoul, onUpdateLocation}){
            <h4 className="card_text">{soul.location}
             <br/>
             <button className="btn-primary" onClick={handleClick}>
-                Update
+               {!isShown ? "Update" : "Close Update"}
             </button>
             {isShown && (
             <form>

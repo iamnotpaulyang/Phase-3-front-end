@@ -38,8 +38,8 @@ function NewSoulForm({demons, addNewSouls}){
                 <label htmlFor="name">Soul's Name: </label>
                 <input className = "form-input" type='text' name='name' value={name} onChange={(e)=>{setName(e.target.value)}}/>
                 <br />
-                <label htmlFor="location">Location: </label>
-                    <select className = "dropdown" id="location" name="location" onChange={(e) => setLocation(e.target.value)}>
+                <label htmlFor="location" >Location: </label>
+                    <select className = "dropdown" name="location" onChange={(e) => setLocation(e.target.value)}>
                         <option value=""> Select...</option>
                         <option value="Tartarus"> Tartarus</option>
                         <option value="Asphodel"> Asphodel</option>

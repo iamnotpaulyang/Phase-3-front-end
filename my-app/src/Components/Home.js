@@ -43,8 +43,8 @@ function Home({demons, addNewDemon}) {
         return <DemonCards demon={demon} key={demon.id} />
         })}
     </div>
-    <div className="new-demon-form">
-      <form className="demon-form" onSubmit={handleSubmit}>
+    <div className="demon-form">
+      <form className="new-demon-form" onSubmit={handleSubmit}>
         <h3>New Demon:</h3>
         <input className = "form-input" value={name} onChange={(e) => setName(e.target.value)} name="name" type="text" placeholder="Demon name" />
         <br />
@@ -52,7 +52,7 @@ function Home({demons, addNewDemon}) {
         <br />
         <input className = "form-input" value={classification} onChange={(e) => setClassification(e.target.value)} type="text" classification="classfication" placeholder="Demon classification" />
         <br />
-        <button className="btn-primary" type="submit">Add Demon</button>
+        <button className="demon-btn" type="submit">Add Demon</button>
       </form>
     </div>
   </div>

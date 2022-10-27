@@ -6,12 +6,12 @@
   --red-orange: rgba(228, 80, 51, 0.467);
   --gold: rgb(161, 103, 16);
   --purple-blue: rgba(23, 35, 126, 0.75);
-  --purple: rgba(42, 19, 107, 0.701);
+  --purple: rgba(45, 27, 94, 0.701);
   --mauve: rgb(120, 75, 132);
   --hibiscus: rgb(180, 55, 87);
   --alecto-red: rgb(246,75,74);
   --emily-pink: rgb(117,31,35);
-  --tisiphone-purple: rgb(50,41,77);
+  --tisiphone-purple: rgb(50,41,77,0.95);
 }
 
 .App {
@@ -116,7 +116,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       flex-wrap: wrap;
       flex-grow: inherit;
       flex: 1;
@@ -175,14 +175,21 @@
 }
 
 .new-demon-form {
- padding-bottom: 80px;
+ padding-bottom: 30px;
  margin: auto;
+ color: whitesmoke;
+ background: rgba(255, 255, 255, 0.1);
+ border-radius: 16px;
+ backdrop-filter: blur(7.9px);
+ box-shadow: 0 4px 30px rgba(117,31,35, 0.65);
 }
+
 .new-demon-form,
 .new-soul-form {
   font-size:18px;
   font-family: "Greek font";
-  padding: 40px;
+  letter-spacing: 2pt;
+  padding-inline: 40px;
   width: 180px;
   display: flex;
   flex-direction: column;
@@ -195,6 +202,8 @@ background: rgba(255, 255, 255, 0.1);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(27, 0, 58, 0.707);
 backdrop-filter: blur(7.9px);
+padding-block: 18px;
+padding-inline: 30px;
 }
 
 .soul-form{
@@ -208,7 +217,9 @@ backdrop-filter: blur(7.9px);
 }
 
 .demon-form{
-  padding: 10px;
+  padding: 4px;
+  padding-bottom: 80px;
+ 
 }
 
 .form-input,
@@ -220,8 +231,9 @@ backdrop-filter: blur(7.9px);
 }
 .dropdown{
   padding: 2px;
+  margin: 0;
 }
-
+.demon-btn,
 .btn-primary {
   background-color: var(--green);
   border: 1px solid var(--purple);
@@ -235,4 +247,25 @@ backdrop-filter: blur(7.9px);
   padding: 8px;
 }
 
+.demon-btn{
+  box-shadow: rgba(117,31,35,.6) 3px 3px 5px;
+  border: 1px solid var(--emily-pink);
+}
+
+.btn{
+  background-color: var(--green);
+  border: 1px solid var(--purple);
+  border-radius: .5rem;
+  color: white;
+  padding: 0.2rem;
+  font-family: "ubuntu";
+  font-size: 12pt;
+  align-self: center;
+  padding-inline: 8px;
+  padding-block: 4px;
+}
+
+#location{
+  margin: 14px;
+}
  
