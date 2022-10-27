@@ -145,19 +145,39 @@
 
 .new-demon-form {
  padding-bottom: 80px;
+ margin: auto;
 }
 .new-demon-form,
 .new-soul-form {
   font-size:18px;
   font-family: "Greek font";
-  padding: 80px;
-  margin: auto;
+  padding: 40px;
+  /* margin: auto; */
   width: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* text-align: left; */
 }
+
+.new-soul-form{
+color: white;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(27, 0, 58, 0.707);
+backdrop-filter: blur(7.9px);
+}
+
+.soul-form{
+  background-image: url("https://preview.redd.it/feger4agnv271.png?width=3840&format=png&auto=webp&s=8d970ccca70a808beab2befaca9cf98b6ae968f8");
+  background-size: cover;
+  display: flex;
+  background-position: inherit;
+  flex-grow: inherit;
+  background-repeat: no-repeat;
+  padding: 16%;
+}
+
 .form-input,
 .dropdown{
   font-size: 16px;

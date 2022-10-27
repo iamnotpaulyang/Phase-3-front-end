@@ -33,7 +33,7 @@ function NewSoulForm({demons, addNewSouls}){
     }
 
     return (
-        <div>
+        <div className="soul-form">
             <form className="new-soul-form" onSubmit={handleSubmit}>
                 <label htmlFor="name">Soul's Name: </label>
                 <input className = "form-input" type='text' name='name' value={name} onChange={(e)=>{setName(e.target.value)}}/>
