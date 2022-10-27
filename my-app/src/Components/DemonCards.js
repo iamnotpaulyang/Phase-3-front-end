@@ -6,7 +6,7 @@ function DemonCards({demon}){
             <img className="demonImg" src={demon.demon_img} alt={demon.name} />
             <h3 className="card_text">{demon.name}</h3>
             <h5 className="card_text">The {demon.classification}</h5>
-            <h5 className="card_text">Guarding {demon.soul_num ? demon.soul_num : 0} Shades</h5>
+            <h5 className="card_text">Guarding <u>{demon.soul_num ? demon.soul_num : 0}</u> Shades</h5>
         </li> 
     )
 }

@@ -38,8 +38,8 @@ function Home({demons, addNewDemon}) {
         })}
     </div>
     <div className="new-demon-form">
-      <h2>New Demon</h2>
       <form onSubmit={handleSubmit}>
+        <h3>New Demon:</h3>
         <input className = "form-input" value={name} onChange={(e) => setName(e.target.value)} name="name" type="text" placeholder="Demon name" />
         <br />
         <input className = "form-input" value={demonImg} onChange={(e) => setDemonImg(e.target.value)} type="text" name="demon_img" placeholder="Image URL" />

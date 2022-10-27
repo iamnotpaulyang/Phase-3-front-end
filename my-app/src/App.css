@@ -33,8 +33,6 @@
 
 .demonImg,
 .shade{
-  height: 35%;
-  width: 35%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -54,11 +52,11 @@
   .cards {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    justify-content: space-around;
-    column-count: 4;
-    gap: 20px;
+    justify-content: space-evenly;
+    column-count: 6;
+    gap: 35px;
     color: whitesmoke;
     font-family: "ubuntu";
     padding: 80px;
@@ -71,11 +69,11 @@
     border-radius: 10px;
     backdrop-filter: blur(8px);
     border: 1px solid var(--green);
-    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    padding-bottom: 10px;
     }
     #demon_card {
       font-size: 18pt;
@@ -89,6 +87,7 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+      flex-grow: inherit;
       flex: 1;
       gap: 20px;
       height: 60%;
@@ -96,6 +95,10 @@
       flex: 1 
     }
     .card_text{
+      margin: 4%;
+      padding: 0%;
+    }
+    .card_title{
       margin: 4%;
       padding: 0%;
     }
@@ -166,7 +169,6 @@
   padding: 2px;
 }
 
-
 .btn-primary {
   background-color: var(--green);
   border: 1px solid var(--purple);
@@ -176,10 +178,8 @@
   font-family: "ubuntu";
   font-size: 12pt;
   box-shadow: var(--purple) 5px 5px 5px;
+  align-self: center;
+  padding: 8px;
 }
 
-.btn--block {
-  display: block;
-  width: 100%;
-}
  

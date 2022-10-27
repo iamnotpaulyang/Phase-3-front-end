@@ -31,7 +31,7 @@ function SoulCards({soul, onDeleteSoul, onUpdateLocation}){
 
     return (
         <li className="card">
-           <h2 className="card_text">{soul.name}</h2>
+           <h2 className="card_text" id="card_title">{soul.name}</h2>
            <img className="shade" src="https://cdn.frankerfacez.com/emoticon/533554/4" alt="Shade" />
            <h4 className="card_text">{soul.location}
             <br/>
