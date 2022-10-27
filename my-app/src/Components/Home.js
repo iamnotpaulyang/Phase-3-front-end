@@ -30,6 +30,7 @@ function Home({demons, addNewDemon}) {
     <div className="home">
       <div className="about">
         <h2>About The Underworld</h2>
+        <h4>The Underworld app is about...</h4>
         <h4>Lore about Hades goes here...</h4>
       </div>    
       <div className="cards"> 

@@ -40,7 +40,7 @@ function SoulCards({soul, onDeleteSoul, onUpdateLocation}){
             </button>
             {isShown && (
             <form>
-                <select id="location" name="location" onChange={(e) => setLocation(e.target.value)}>
+                <select className = "form-input" id="location" name="location" onChange={(e) => setLocation(e.target.value)}>
                     <option value=""> Select...</option>
                     <option value="Tartarus"> Tartarus</option>
                     <option value="Asphodel"> Asphodel</option>
