@@ -31,7 +31,7 @@ function Home({demons, addNewDemon}) {
       <div className="about">
         <h2>About The Underworld</h2>
         <h4>The Underworld app is about...</h4>
-        <h4>Lore about Hades goes here...</h4>
+        <h4>Hades, god of the Greek underworld and main antagonist of Hades, the Action RPG, is an emotionally distant workaholic god who treats his son Zagreus with cold, barely concealed disdain. Hades however, is not the Greek equivalent of the Christian Devil contrary to what movies like Disney’s Hercules or Clash of the Titans suggest. Given that Hades is no longer with his siblings on Olympus, he is no longer considered an Olympian God, despite the fact that Zeus, Poseidon, Hera, Demeter, and Hestia all remain deities of the Olympian pantheon. As the legend goes, the three brothers Zeus, Poseidon, and Hades were each to take a realm: Zeus took the sky and air, Poseidon took the sea and water, and Hades was left with the Underworld, making an outcast of him eternally. In both classic mythology and this game, Hades is a stoic, even-handed god who focuses on professionally carrying out the divine duties, contrary to the decadent depravities of other gods like Zeus or Poseidon. Indeed, whenever Zagreus falls in combat, he can visit Hades at his desk, where the Lord of the Underworld is constantly occupied filling out paperwork and sorting the souls of the dead into their rightful afterlives.</h4>
       </div>    
       <div className="cards"> 
         {demons.map((demon) => {
