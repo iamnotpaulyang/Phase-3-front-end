@@ -9,6 +9,9 @@
   --purple: rgba(42, 19, 107, 0.701);
   --mauve: rgb(120, 75, 132);
   --hibiscus: rgb(180, 55, 87);
+  --alecto-red: rgb(246,75,74);
+  --emily-pink: rgb(117,31,35);
+  --tisiphone-purple: rgb(50,41,77);
 }
 
 .App {
@@ -93,7 +96,7 @@
   }
   .card {
     box-shadow: var(--green) 5px 5px 5px;
-    background: var(--purple);
+    background: var(--tisiphone-purple);
     border-radius: 10px;
     backdrop-filter: blur(8px);
     border: 1px solid var(--green);
@@ -106,7 +109,7 @@
     #demon_card {
       font-size: 18pt;
       box-shadow: var(--green) 5px 5px 5px;
-      background: var(--burnt-orange);
+      background: var(--emily-pink);
       border-radius: 10px;
       border: 1px solid var(--green);
       padding: 10px;
