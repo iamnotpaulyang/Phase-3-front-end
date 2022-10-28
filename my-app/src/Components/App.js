@@ -36,7 +36,7 @@ function App() {
     })
     setSouls(remainingSouls)
   }
-
+    console.log
   return (
     <div className="App">
       <NavBar className = "NavBar"/> 
